@@ -8,6 +8,7 @@ No server, no browser, no login — just Node.js.
 
 ```bash
 node scraper/shop.js path/to/groceries.txt
+node scraper/shop.js path/to/groceries.txt --store=123   # different store
 ```
 
 Outputs a `Mmm-DD.md` file (e.g. `Feb-14.md`) in the same folder as the input, with items grouped by aisle in walking order.
@@ -73,9 +74,18 @@ If an item makes it through parsing but the ShopRite API returns no matching pro
 
 API results are persisted to `scraper/cache.json` so subsequent runs are near-instant for previously looked-up items. On a typical 40-item list, the first run takes ~30 seconds (two API calls per item); cached runs complete in under a second.
 
+The cache is **keyed by store number**, so lookups for different stores don't collide:
+```json
+{
+  "592": { "butter": { "aisle": "Dairy", "bay": "PROMO" }, ... },
+  "123": { "milk": { "aisle": "Aisle 4", "bay": "" }, ... }
+}
+```
+
 Key behaviors:
 - **Unknown items are not cached** — if the API couldn't find an aisle, the item will be retried next run rather than permanently stuck as Unknown.
-- **Cache is shared across all input files** — once "butter" is looked up, it's cached for every future list.
+- **Cache is shared across all input files** — once "butter" is looked up for a given store, it's cached for every future list at that store.
+- **Per-store isolation** — switching stores with `--store=` uses a separate cache bucket, so aisle data from one store never bleeds into another.
 - **Delete `cache.json` to force fresh lookups** — useful if the store rearranges aisles or you want to refresh stale data.
 - **The cache file is committed to the repo** so you can start with a pre-populated set of lookups.
 
@@ -110,7 +120,13 @@ tests/
 
 ## Configuration
 
-The store is currently hardcoded to **ShopRite #592 (South Plainfield, NJ)**. To use a different store, change `STORE_ID` in `scraper/shop.js` and update the walk order in `scraper/lib/aisleData.js`.
+The default store is **ShopRite #592 (South Plainfield, NJ)**. Override it per-run with `--store=`:
+
+```bash
+node scraper/shop.js groceries.txt --store=456
+```
+
+The API calls work with any valid Wakefern/ShopRite store ID — aisle locations are store-specific, and the cache keeps each store's data separate. The walk order in `scraper/lib/aisleData.js` is currently tuned for store #592; other stores may sort differently.
 
 ## Requirements
 

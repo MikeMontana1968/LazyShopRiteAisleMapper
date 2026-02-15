@@ -2,7 +2,7 @@
 // ============================================================
 // ShopRite CLI — Shopping List → Markdown with Aisle Lookups
 // ============================================================
-// Usage: node scraper/shop.js path/to/groceries.txt
+// Usage: node scraper/shop.js path/to/groceries.txt [--store=NNN]
 //
 // Reads a natural-language grocery list, calls the ShopRite
 // storefrontgateway API for aisle locations, and writes a
@@ -28,17 +28,23 @@ const AISLE_SORT_ORDER = (function () {
 // ShopRite Storefrontgateway API (inlined from server.js)
 // ============================================================
 const API_BASE = 'https://storefrontgateway.shoprite.com/api';
-const STORE_ID = '592';
+const DEFAULT_STORE_ID = '592';
 
-// ---- Persistent disk cache (scraper/cache.json) ----
+// ---- Parse --store=NNN from CLI args ----
+const storeArg = process.argv.find(a => a.startsWith('--store='));
+const STORE_ID = storeArg ? storeArg.split('=')[1] : DEFAULT_STORE_ID;
+
+// ---- Persistent disk cache (scraper/cache.json, keyed by store) ----
 const CACHE_PATH = path.resolve(__dirname, 'cache.json');
 const cache = new Map();
+let allCacheData = {};
 
 function loadCache() {
   try {
-    const data = JSON.parse(fs.readFileSync(CACHE_PATH, 'utf-8'));
-    for (const [k, v] of Object.entries(data)) cache.set(k, v);
+    allCacheData = JSON.parse(fs.readFileSync(CACHE_PATH, 'utf-8'));
   } catch (_) { /* no cache file yet */ }
+  const storeData = allCacheData[STORE_ID] || {};
+  for (const [k, v] of Object.entries(storeData)) cache.set(k, v);
 }
 
 function saveCache() {
@@ -47,7 +53,8 @@ function saveCache() {
   for (const [k, v] of cache) {
     if (v.aisle !== 'Unknown') obj[k] = v;
   }
-  fs.writeFileSync(CACHE_PATH, JSON.stringify(obj, null, 2), 'utf-8');
+  allCacheData[STORE_ID] = obj;
+  fs.writeFileSync(CACHE_PATH, JSON.stringify(allCacheData, null, 2), 'utf-8');
 }
 
 loadCache();
@@ -184,9 +191,10 @@ async function lookupItem(itemName, index, total) {
 // Main CLI pipeline
 // ============================================================
 async function main() {
-  const inputPath = process.argv[2];
+  const args = process.argv.slice(2).filter(a => !a.startsWith('--'));
+  const inputPath = args[0];
   if (!inputPath) {
-    process.stderr.write('Usage: node scraper/shop.js <grocery-list.txt>\n');
+    process.stderr.write('Usage: node scraper/shop.js <grocery-list.txt> [--store=NNN]\n');
     process.exit(1);
   }
 
