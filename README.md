@@ -81,7 +81,7 @@ Key behaviors:
 
 ## Input Format
 
-The parser handles messy, natural-language lists:
+The parser handles messy, natural-language lists, the kind my wife sends me through Siri:
 
 ```
 Fruits: berries (under $5), grapes, apples, pears
