@@ -1,0 +1,286 @@
+{
+  "sour dough bread": {
+    "aisle": "Deli",
+    "bay": "ISLAND 3"
+  },
+  "berries": {
+    "aisle": "Produce",
+    "bay": "ISLAND 1"
+  },
+  "grapes": {
+    "aisle": "Produce",
+    "bay": "ISLAND 1"
+  },
+  "apples": {
+    "aisle": "Produce",
+    "bay": "LEFT WALL"
+  },
+  "pears": {
+    "aisle": "Produce",
+    "bay": "LEFT WALL"
+  },
+  "oranges": {
+    "aisle": "Produce",
+    "bay": "LEFT WALL"
+  },
+  "potatoes": {
+    "aisle": "Produce",
+    "bay": "TABLE 6"
+  },
+  "carrots": {
+    "aisle": "Produce",
+    "bay": "RIGHT WALL"
+  },
+  "celery": {
+    "aisle": "Produce",
+    "bay": "RIGHT WALL"
+  },
+  "rosemary": {
+    "aisle": "Aisle 11",
+    "bay": ""
+  },
+  "thyme": {
+    "aisle": "Aisle 11",
+    "bay": ""
+  },
+  "cilantro": {
+    "aisle": "Produce",
+    "bay": "RIGHT WALL"
+  },
+  "parsley": {
+    "aisle": "Aisle 11",
+    "bay": ""
+  },
+  "avocados": {
+    "aisle": "Produce",
+    "bay": "TABLE 1"
+  },
+  "limes": {
+    "aisle": "Produce",
+    "bay": "LEFT WALL"
+  },
+  "black beans": {
+    "aisle": "Aisle 12",
+    "bay": ""
+  },
+  "tomato paste": {
+    "aisle": "Aisle 12",
+    "bay": ""
+  },
+  "sugar": {
+    "aisle": "Aisle 11",
+    "bay": ""
+  },
+  "cheerios": {
+    "aisle": "Aisle 11",
+    "bay": ""
+  },
+  "frosted flakes": {
+    "aisle": "Aisle 11",
+    "bay": ""
+  },
+  "olive oil": {
+    "aisle": "Aisle 13",
+    "bay": ""
+  },
+  "couscous": {
+    "aisle": "Aisle 12",
+    "bay": ""
+  },
+  "dry beans": {
+    "aisle": "Aisle 12",
+    "bay": ""
+  },
+  "turkey": {
+    "aisle": "Meat",
+    "bay": "ISLAND"
+  },
+  "ham": {
+    "aisle": "Backwall",
+    "bay": ""
+  },
+  "salami": {
+    "aisle": "Deli",
+    "bay": "SERVICE COUNTER"
+  },
+  "provolone": {
+    "aisle": "Deli",
+    "bay": "SERVICE COUNTER"
+  },
+  "munster": {
+    "aisle": "Deli",
+    "bay": "SERVICE COUNTER"
+  },
+  "cinnamon rolls": {
+    "aisle": "Aisle 18",
+    "bay": ""
+  },
+  "biscuits": {
+    "aisle": "Dairy",
+    "bay": "PROMO"
+  },
+  "crescents": {
+    "aisle": "Aisle 18",
+    "bay": ""
+  },
+  "bleach": {
+    "aisle": "Aisle 15",
+    "bay": ""
+  },
+  "butter": {
+    "aisle": "Dairy",
+    "bay": "PROMO"
+  },
+  "eggs": {
+    "aisle": "Aisle 18",
+    "bay": ""
+  },
+  "sour cream": {
+    "aisle": "Aisle 18",
+    "bay": ""
+  },
+  "orange juice": {
+    "aisle": "Dairy",
+    "bay": "BACK WALL"
+  },
+  "seltzer": {
+    "aisle": "Aisle 6",
+    "bay": ""
+  },
+  "coke": {
+    "aisle": "Aisle 8",
+    "bay": ""
+  },
+  "ginger ale": {
+    "aisle": "Aisle 8",
+    "bay": ""
+  },
+  "cranberry juice": {
+    "aisle": "Aisle 8",
+    "bay": ""
+  },
+  "half and half": {
+    "aisle": "Dairy",
+    "bay": "BACK WALL"
+  },
+  "frozen vegetables": {
+    "aisle": "Aisle 17",
+    "bay": ""
+  },
+  "dozen eggs": {
+    "aisle": "Aisle 18",
+    "bay": ""
+  },
+  "onion": {
+    "aisle": "Produce",
+    "bay": "TABLE 6"
+  },
+  "peppers": {
+    "aisle": "Produce",
+    "bay": "RIGHT WALL"
+  },
+  "kale/spinach": {
+    "aisle": "Produce",
+    "bay": "RIGHT WALL"
+  },
+  "lunch": {
+    "aisle": "Aisle 18",
+    "bay": ""
+  },
+  "salad blend": {
+    "aisle": "Produce",
+    "bay": "ISLAND 1"
+  },
+  "tomatoes": {
+    "aisle": "Produce",
+    "bay": "TABLE 2"
+  },
+  "dinner": {
+    "aisle": "Backwall",
+    "bay": ""
+  },
+  "chicken breasts": {
+    "aisle": "Meat",
+    "bay": "ISLAND"
+  },
+  "sweet potatoes": {
+    "aisle": "Produce",
+    "bay": "TABLE 6"
+  },
+  "russet potatoes": {
+    "aisle": "Produce",
+    "bay": "TABLE 6"
+  },
+  "wheat flour": {
+    "aisle": "Aisle 11",
+    "bay": ""
+  },
+  "rice": {
+    "aisle": "Aisle 12",
+    "bay": ""
+  },
+  "tatoes": {
+    "aisle": "Backwall",
+    "bay": ""
+  },
+  "milch": {
+    "aisle": "Frozen",
+    "bay": "PROMO"
+  },
+  "onions": {
+    "aisle": "Produce",
+    "bay": "TABLE 6"
+  },
+  "garlic": {
+    "aisle": "Produce",
+    "bay": "TABLE 6"
+  },
+  "oil": {
+    "aisle": "Aisle 13",
+    "bay": ""
+  },
+  "the serving)": {
+    "aisle": "Front Room Seasonal",
+    "bay": ""
+  },
+  "for cooking)": {
+    "aisle": "Aisle 13",
+    "bay": ""
+  },
+  "yeast": {
+    "aisle": "Aisle 5",
+    "bay": ""
+  },
+  "herbs": {
+    "aisle": "Produce",
+    "bay": "RIGHT WALL"
+  },
+  "garden": {
+    "aisle": "Front Entrance Seasonal/in&out",
+    "bay": ""
+  },
+  "strained yogurt": {
+    "aisle": "Aisle 18",
+    "bay": ""
+  },
+  "canned tomatoes": {
+    "aisle": "Aisle 12",
+    "bay": ""
+  },
+  "pigfat": {
+    "aisle": "Aisle 18",
+    "bay": ""
+  },
+  "baked in the oven)": {
+    "aisle": "Aisle 9",
+    "bay": ""
+  },
+  "bacon": {
+    "aisle": "Aisle 18",
+    "bay": ""
+  },
+  "ryebread": {
+    "aisle": "Deli",
+    "bay": "SERVICE COUNTER"
+  }
+}

@@ -1,5 +1,4 @@
 node_modules/
-scraper/cache.json
 secrets.txt
 .claude/
 PLAN.md
